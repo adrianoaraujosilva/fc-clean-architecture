@@ -3,7 +3,7 @@ import ProductModel from "../../../infrastructure/product/repository/sequelize/p
 import ProductRepository from "../../../infrastructure/product/repository/sequelize/product.repository";
 import ListProductUseCase from "./list.product.usecase";
 import ProductFactory from "../../../domain/product/factory/product.factory";
-import CreateProductoUseCase from "../create/create.product.usecase";
+import CreateProductUseCase from "../create/create.product.usecase";
 
 describe("Test list product use case", () => {
   let sequelize: Sequelize;
@@ -26,7 +26,7 @@ describe("Test list product use case", () => {
 
   it("should list a product", async () => {
     const productRepository = new ProductRepository();
-    const useCaseCreate = new CreateProductoUseCase(productRepository);
+    const useCaseCreate = new CreateProductUseCase(productRepository);
     const useCase = new ListProductUseCase(productRepository);
 
     const inputA = {
